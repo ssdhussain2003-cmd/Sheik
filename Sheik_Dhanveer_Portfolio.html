@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sheik Dhanveer Hussain S — Cyber Security Analyst</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#0f1117;
+  --ink2:#2a2d3a;
+  --ink3:#5a5f72;
+  --paper:#f8f7f4;
+  --paper2:#f0efe9;
+  --paper3:#e8e6de;
+  --accent:#1a3a5c;
+  --accent2:#c8913a;
+  --rule:rgba(15,17,23,0.12);
+  --serif:'DM Serif Display',Georgia,serif;
+  --sans:'DM Sans',sans-serif;
+  --mono:'DM Mono',monospace;
+}
+html{scroll-behavior:smooth}
+body{background:var(--paper);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.7;overflow-x:hidden}
+
+/* SCROLLBAR */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--paper2)}
+::-webkit-scrollbar-thumb{background:var(--accent);border-radius:2px}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(248,247,244,0.92);backdrop-filter:blur(12px);border-bottom:1px solid var(--rule);height:64px;display:flex;align-items:center;justify-content:space-between;padding:0 4rem}
+.nav-brand{font-family:var(--serif);font-size:1.1rem;color:var(--ink);letter-spacing:0.02em}
+.nav-brand span{color:var(--accent2)}
+.nav-links{display:flex;gap:2.5rem;list-style:none}
+.nav-links a{color:var(--ink3);text-decoration:none;font-size:0.78rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:400;transition:color 0.2s}
+.nav-links a:hover{color:var(--accent)}
+.nav-cta{background:var(--accent);color:var(--paper)!important;padding:0.5rem 1.25rem;border-radius:2px;letter-spacing:0.08em;font-size:0.75rem!important}
+.nav-cta:hover{opacity:0.85}
+
+/* HERO */
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;padding:0 4rem;padding-top:64px;gap:4rem;align-items:center;background:var(--paper);position:relative}
+.hero::before{content:'';position:absolute;top:64px;right:0;width:50%;height:100%;background:var(--paper2);z-index:0}
+.hero-left{position:relative;z-index:1;padding:4rem 0}
+.hero-eyebrow{font-family:var(--mono);font-size:0.72rem;color:var(--accent2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1.5rem;display:flex;align-items:center;gap:0.75rem}
+.hero-eyebrow::before{content:'';width:32px;height:1px;background:var(--accent2)}
+.hero h1{font-family:var(--serif);font-size:clamp(2.8rem,5vw,4.5rem);line-height:1.05;color:var(--ink);margin-bottom:1.5rem;letter-spacing:-0.01em}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero-desc{color:var(--ink3);font-size:1rem;max-width:440px;line-height:1.8;margin-bottom:2.5rem;font-weight:300}
+.hero-actions{display:flex;gap:1rem;align-items:center}
+.btn-primary{background:var(--accent);color:var(--paper);padding:0.85rem 2rem;border-radius:2px;text-decoration:none;font-size:0.82rem;letter-spacing:0.08em;text-transform:uppercase;font-weight:500;transition:opacity 0.2s}
+.btn-primary:hover{opacity:0.85}
+.btn-ghost{color:var(--accent);font-size:0.82rem;letter-spacing:0.05em;text-decoration:none;display:flex;align-items:center;gap:0.5rem;border-bottom:1px solid var(--accent);padding-bottom:2px;transition:gap 0.2s}
+.btn-ghost:hover{gap:0.75rem}
+.hero-right{position:relative;z-index:1;padding:4rem 0 4rem 3rem;display:flex;flex-direction:column;gap:1.5rem}
+.hero-stat{border-left:2px solid var(--accent2);padding-left:1.5rem}
+.hero-stat-num{font-family:var(--serif);font-size:2.8rem;color:var(--ink);line-height:1}
+.hero-stat-label{font-size:0.75rem;color:var(--ink3);letter-spacing:0.08em;text-transform:uppercase;margin-top:0.25rem}
+.hero-divider{width:100%;height:1px;background:var(--rule)}
+.hero-tags{display:flex;flex-wrap:wrap;gap:0.5rem}
+.hero-tag{background:white;border:1px solid var(--rule);color:var(--ink2);font-size:0.72rem;padding:0.35rem 0.8rem;border-radius:2px;font-family:var(--mono)}
+
+/* SECTIONS */
+.section{padding:6rem 4rem;max-width:1200px;margin:0 auto}
+.section-label{font-family:var(--mono);font-size:0.7rem;color:var(--accent2);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:0.75rem;display:flex;align-items:center;gap:0.75rem}
+.section-label::before{content:'';width:24px;height:1px;background:var(--accent2)}
+.section-title{font-family:var(--serif);font-size:clamp(2rem,4vw,3rem);color:var(--ink);margin-bottom:3rem;line-height:1.1}
+.section-title em{font-style:italic;color:var(--accent)}
+
+/* ABOUT */
+.about-layout{display:grid;grid-template-columns:1.2fr 1fr;gap:5rem;align-items:start}
+.about-text p{color:var(--ink3);line-height:1.9;margin-bottom:1.25rem;font-size:0.95rem}
+.about-text p strong{color:var(--ink);font-weight:500}
+.about-aside{display:flex;flex-direction:column;gap:1.5rem}
+.kpi-row{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.kpi{background:var(--paper2);border:1px solid var(--rule);padding:1.5rem;border-radius:2px}
+.kpi-num{font-family:var(--serif);font-size:2.4rem;color:var(--accent);line-height:1}
+.kpi-label{font-size:0.72rem;color:var(--ink3);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.4rem}
+.about-quote{border-left:2px solid var(--accent2);padding:1.5rem;background:white;border-radius:0 2px 2px 0}
+.about-quote p{font-family:var(--serif);font-size:1.05rem;color:var(--ink2);line-height:1.6;font-style:italic}
+.about-quote cite{font-size:0.72rem;color:var(--ink3);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.75rem;display:block;font-style:normal}
+
+/* SKILLS */
+.skills-bg{background:var(--paper2);padding:6rem 0}
+.skills-inner{max-width:1200px;margin:0 auto;padding:0 4rem}
+.skills-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.skill-block{background:var(--paper2);padding:2rem 1.5rem}
+.skill-block:hover{background:white}
+.skill-block-title{font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent2);font-weight:500;margin-bottom:1.25rem;font-family:var(--mono)}
+.skill-list{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.skill-list li{font-size:0.82rem;color:var(--ink2);font-weight:300;display:flex;align-items:center;gap:0.5rem}
+.skill-list li::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--accent);flex-shrink:0}
+
+/* EXPERIENCE */
+.exp-timeline{display:flex;flex-direction:column;gap:0}
+.exp-item{display:grid;grid-template-columns:200px 1fr;gap:3rem;padding:3rem 0;border-bottom:1px solid var(--rule);position:relative}
+.exp-item:last-child{border-bottom:none}
+.exp-meta{text-align:right}
+.exp-date{font-family:var(--mono);font-size:0.75rem;color:var(--accent2);letter-spacing:0.05em}
+.exp-company{font-size:0.82rem;color:var(--ink3);margin-top:0.25rem;font-weight:300}
+.exp-type{display:inline-block;margin-top:0.75rem;font-size:0.68rem;color:var(--accent);border:1px solid var(--accent);padding:0.2rem 0.6rem;letter-spacing:0.08em;text-transform:uppercase}
+.exp-content{}
+.exp-role{font-family:var(--serif);font-size:1.5rem;color:var(--ink);margin-bottom:1rem;line-height:1.2}
+.exp-bullets{list-style:none;display:flex;flex-direction:column;gap:0.6rem}
+.exp-bullets li{color:var(--ink3);font-size:0.875rem;padding-left:1.25rem;position:relative;line-height:1.7}
+.exp-bullets li::before{content:'—';position:absolute;left:0;color:var(--accent2)}
+.exp-tools{display:flex;flex-wrap:wrap;gap:0.4rem;margin-top:1.25rem}
+.exp-tool{font-family:var(--mono);font-size:0.68rem;background:var(--paper2);border:1px solid var(--rule);color:var(--ink2);padding:0.25rem 0.6rem;border-radius:1px}
+
+/* PROJECTS */
+.projects-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--rule)}
+.project-card{background:var(--paper);padding:2.5rem;transition:background 0.2s}
+.project-card:hover{background:var(--paper2)}
+.project-type{font-family:var(--mono);font-size:0.68rem;color:var(--accent2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:1rem}
+.project-title{font-family:var(--serif);font-size:1.35rem;color:var(--ink);margin-bottom:0.75rem;line-height:1.2}
+.project-desc{color:var(--ink3);font-size:0.82rem;line-height:1.8;margin-bottom:1.25rem}
+.project-link{color:var(--accent);font-size:0.75rem;text-decoration:none;letter-spacing:0.05em;display:flex;align-items:center;gap:0.4rem;border-bottom:1px solid var(--accent);width:fit-content;padding-bottom:2px;transition:gap 0.2s}
+.project-link:hover{gap:0.65rem}
+.project-badges{display:flex;flex-wrap:wrap;gap:0.4rem;margin-bottom:1rem}
+.project-badge{font-size:0.68rem;background:var(--accent);color:var(--paper);padding:0.2rem 0.6rem;letter-spacing:0.05em}
+
+/* CERTS */
+.certs-bg{background:var(--paper2);padding:6rem 0}
+.certs-inner{max-width:1200px;margin:0 auto;padding:0 4rem}
+.certs-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:1.5rem}
+.cert-card{background:white;border:1px solid var(--rule);padding:1.5rem;display:flex;gap:1.25rem;align-items:flex-start;transition:border-color 0.2s;border-radius:2px}
+.cert-card:hover{border-color:var(--accent)}
+.cert-icon{width:40px;height:40px;border:1px solid var(--rule);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0;background:var(--paper2)}
+.cert-body{}
+.cert-name{font-size:0.88rem;color:var(--ink);font-weight:500;line-height:1.4}
+.cert-issuer{font-size:0.75rem;color:var(--ink3);margin-top:0.2rem}
+.cert-badge{display:inline-block;margin-top:0.5rem;font-size:0.65rem;letter-spacing:0.08em;text-transform:uppercase;padding:0.2rem 0.6rem;border-radius:1px}
+.cert-done{background:rgba(26,58,92,0.08);color:var(--accent)}
+.cert-wip{background:rgba(200,145,58,0.12);color:var(--accent2)}
+
+/* BOUNTY */
+.bounty-layout{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start}
+.bounty-left{}
+.bounty-numbers{display:flex;flex-direction:column;gap:2rem;margin-bottom:2.5rem}
+.bounty-row{display:flex;gap:3rem}
+.bounty-num{font-family:var(--serif);font-size:3rem;color:var(--ink);line-height:1}
+.bounty-num span{font-size:1.5rem;color:var(--accent2)}
+.bounty-num-label{font-size:0.72rem;color:var(--ink3);text-transform:uppercase;letter-spacing:0.08em;margin-top:0.35rem}
+.bounty-programs{display:flex;flex-direction:column;gap:1px;background:var(--rule);border:1px solid var(--rule)}
+.bounty-program{background:var(--paper);padding:1.25rem 1.5rem;display:flex;justify-content:space-between;align-items:center}
+.bounty-program:hover{background:var(--paper2)}
+.bp-name{font-size:0.88rem;color:var(--ink);font-weight:400}
+.bp-sub{font-size:0.72rem;color:var(--ink3);margin-top:0.15rem}
+.bp-stat{font-family:var(--mono);font-size:0.8rem;color:var(--accent);text-align:right}
+.bp-valid{font-size:0.7rem;color:var(--accent2);margin-top:0.15rem}
+.bounty-right{}
+.bounty-platforms{display:flex;flex-direction:column;gap:1.5rem}
+.platform-block{border-left:2px solid var(--rule);padding-left:1.5rem;transition:border-color 0.2s}
+.platform-block:hover{border-color:var(--accent2)}
+.pb-name{font-family:var(--mono);font-size:0.72rem;color:var(--accent2);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.4rem}
+.pb-title{font-size:0.95rem;color:var(--ink);margin-bottom:0.4rem;font-weight:400}
+.pb-desc{font-size:0.82rem;color:var(--ink3);line-height:1.7}
+
+/* CONTACT */
+.contact-bg{background:var(--accent);padding:6rem 4rem;text-align:center}
+.contact-label{font-family:var(--mono);font-size:0.7rem;color:rgba(200,145,58,0.8);letter-spacing:0.15em;text-transform:uppercase;margin-bottom:1rem;display:flex;align-items:center;justify-content:center;gap:0.75rem}
+.contact-label::before,.contact-label::after{content:'';width:24px;height:1px;background:rgba(200,145,58,0.5)}
+.contact-title{font-family:var(--serif);font-size:clamp(2rem,5vw,3.5rem);color:var(--paper);margin-bottom:1rem;line-height:1.1}
+.contact-sub{color:rgba(248,247,244,0.6);margin-bottom:3rem;font-size:0.95rem;max-width:480px;margin-left:auto;margin-right:auto}
+.contact-links{display:flex;justify-content:center;flex-wrap:wrap;gap:1rem;margin-bottom:3rem}
+.contact-link{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:var(--paper);text-decoration:none;padding:0.85rem 1.75rem;font-size:0.8rem;letter-spacing:0.08em;text-transform:uppercase;transition:background 0.2s;border-radius:2px;display:flex;align-items:center;gap:0.6rem}
+.contact-link:hover{background:rgba(255,255,255,0.18)}
+.contact-divider{width:1px;height:40px;background:rgba(255,255,255,0.15)}
+.contact-info{display:flex;justify-content:center;gap:3rem;flex-wrap:wrap}
+.ci-label{font-size:0.68rem;color:rgba(248,247,244,0.4);letter-spacing:0.1em;text-transform:uppercase;margin-bottom:0.25rem}
+.ci-val{font-size:0.85rem;color:rgba(248,247,244,0.8)}
+
+/* FOOTER */
+footer{background:var(--ink);padding:2rem 4rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+footer p{font-size:0.72rem;color:rgba(248,247,244,0.3);letter-spacing:0.05em}
+
+/* ANIMATIONS */
+.fade-in{opacity:0;transform:translateY(20px);transition:opacity 0.6s ease,transform 0.6s ease}
+.fade-in.visible{opacity:1;transform:translateY(0)}
+
+@media(max-width:900px){
+  nav{padding:0 1.5rem}
+  .nav-links{display:none}
+  .hero{grid-template-columns:1fr;padding:1.5rem;padding-top:80px}
+  .hero::before{display:none}
+  .hero-right{padding:0}
+  .section{padding:4rem 1.5rem}
+  .about-layout{grid-template-columns:1fr}
+  .skills-grid{grid-template-columns:repeat(2,1fr)}
+  .exp-item{grid-template-columns:1fr;gap:0.75rem}
+  .exp-meta{text-align:left}
+  .projects-grid{grid-template-columns:1fr}
+  .bounty-layout{grid-template-columns:1fr}
+  .contact-bg{padding:4rem 1.5rem}
+  .skills-bg,.certs-bg{padding:4rem 0}
+  .skills-inner,.certs-inner{padding:0 1.5rem}
+  footer{padding:2rem 1.5rem}
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="nav-brand">Sheik Dhanveer <span>Hussain</span></div>
+  <ul class="nav-links">
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#projects">Research</a></li>
+    <li><a href="#certs">Certifications</a></li>
+    <li><a href="#bounty">Bug Bounty</a></li>
+    <li><a href="#contact" class="nav-cta">Contact</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-left fade-in">
+    <div class="hero-eyebrow">Cyber Security Analyst</div>
+    <h1>Security is<br>not a product,<br><em>it's a process.</em></h1>
+    <p class="hero-desc">SOC L1 Analyst at Tata Consultancy Services · IEEE Published Researcher · HackerOne Bounty Awardee · Google VRP Recognized Contributor</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get In Touch</a>
+      <a href="#experience" class="btn-ghost">View Experience →</a>
+    </div>
+  </div>
+  <div class="hero-right fade-in">
+    <div class="hero-stat">
+      <div class="hero-stat-num">40+</div>
+      <div class="hero-stat-label">Security Alerts Triaged Daily</div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">2</div>
+      <div class="hero-stat-label">IEEE Published Papers</div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-stat">
+      <div class="hero-stat-num">$200</div>
+      <div class="hero-stat-label">HackerOne Bounty Award</div>
+    </div>
+    <div class="hero-divider"></div>
+    <div class="hero-tags">
+      <span class="hero-tag">CrowdStrike Falcon</span>
+      <span class="hero-tag">IBM QRadar</span>
+      <span class="hero-tag">Palo Alto XSOAR</span>
+      <span class="hero-tag">Cortex XDR</span>
+      <span class="hero-tag">Azure AD</span>
+      <span class="hero-tag">VirusTotal</span>
+    </div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-label">About</div>
+  <h2 class="section-title">Who I <em>Am</em></h2>
+  <div class="about-layout">
+    <div class="about-text fade-in">
+      <p>I am a <strong>Results-driven Cyber Security Analyst</strong> with 1+ year of hands-on experience at Tata Consultancy Services (TCS) in SOC L1 operations, threat detection, and incident response across multiple enterprise client environments.</p>
+      <p>My daily work involves monitoring and triaging security alerts using <strong>CrowdStrike Falcon Insight, IBM QRadar SIEM, Palo Alto Cortex XSOAR, and Cortex XDR</strong> — performing incident triage, IOC investigation, log analysis, and escalation following SOC playbooks.</p>
+      <p>What sets me apart is a unique combination of <strong>security operations experience, published IEEE research</strong>, real-world vulnerability discovery through bug bounty programs, and a developer background that gives me a deeper understanding of how applications are built — and where they break.</p>
+      <p>I am primarily targeting <strong>SOC Analyst, Threat Detection, and Incident Response</strong> roles, while remaining open to penetration testing and threat intelligence opportunities.</p>
+    </div>
+    <div class="about-aside fade-in">
+      <div class="kpi-row">
+        <div class="kpi">
+          <div class="kpi-num">1+</div>
+          <div class="kpi-label">Years at TCS</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num">40+</div>
+          <div class="kpi-label">Alerts / Day</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num">2</div>
+          <div class="kpi-label">IEEE Papers</div>
+        </div>
+        <div class="kpi">
+          <div class="kpi-num">7.98</div>
+          <div class="kpi-label">B.E. CGPA</div>
+        </div>
+      </div>
+      <div class="about-quote">
+        <p>"A unique blend of SOC operations, vulnerability research, and IEEE-published cybersecurity research."</p>
+        <cite>Chennai, Tamil Nadu, India</cite>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<div class="skills-bg" id="skills">
+  <div class="skills-inner">
+    <div class="section-label">Skills</div>
+    <h2 class="section-title" style="margin-bottom:2rem">Tools & <em>Platforms</em></h2>
+    <div class="skills-grid fade-in">
+      <div class="skill-block">
+        <div class="skill-block-title">SOAR / SIEM</div>
+        <ul class="skill-list">
+          <li>Palo Alto Cortex XSOAR</li>
+          <li>IBM QRadar</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">EDR / XDR</div>
+        <ul class="skill-list">
+          <li>CrowdStrike Falcon Insight</li>
+          <li>Cortex XDR</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Cloud / IAM</div>
+        <ul class="skill-list">
+          <li>Azure Active Directory</li>
+          <li>CASB (MVision)</li>
+          <li>Google Workspace</li>
+          <li>UEBA / GRA</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Threat Intelligence</div>
+        <ul class="skill-list">
+          <li>Recorded Future</li>
+          <li>VirusTotal</li>
+          <li>AbuseIPDB</li>
+          <li>URLScan</li>
+          <li>Wildfire</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Email Security</div>
+        <ul class="skill-list">
+          <li>Microsoft Defender</li>
+          <li>Cisco IronPort</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Penetration Testing</div>
+        <ul class="skill-list">
+          <li>Burp Suite</li>
+          <li>OWASP Top 10</li>
+          <li>Web App Pen Testing</li>
+          <li>Mobile Pen Testing</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Languages</div>
+        <ul class="skill-list">
+          <li>Python</li>
+          <li>PowerShell</li>
+          <li>Java</li>
+          <li>JavaScript</li>
+          <li>SQL</li>
+        </ul>
+      </div>
+      <div class="skill-block">
+        <div class="skill-block-title">Frameworks</div>
+        <ul class="skill-list">
+          <li>Zero Trust Architecture</li>
+          <li>Secure DevOps</li>
+          <li>Incident Response</li>
+          <li>NIST / OWASP</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<section class="section" id="experience">
+  <div class="section-label">Experience</div>
+  <h2 class="section-title">Work <em>History</em></h2>
+  <div class="exp-timeline">
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-date">Apr 2025 — Present</div>
+        <div class="exp-company">Tata Consultancy Services</div>
+        <div class="exp-type">Full-time</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Cyber Security Analyst — L1 (SOC)</div>
+        <ul class="exp-bullets">
+          <li>Monitored and triaged 40+ security alerts daily across multiple TCS client environments using CrowdStrike Falcon Insight, IBM QRadar SIEM, Palo Alto Cortex XSOAR, and Cortex XDR</li>
+          <li>Performed incident triage, IOC investigation, log analysis, and event correlation to detect malware and anomalous behaviors across TCP/IP, DNS, and HTTP protocols</li>
+          <li>Investigated suspicious sign-ins, MFA anomalies, and privilege escalations through Azure Active Directory</li>
+          <li>Enriched investigations using Recorded Future, VirusTotal, AbuseIPDB, and URLScan threat intelligence platforms</li>
+          <li>Escalated confirmed incidents to L2/L3 analysts with detailed root cause analysis and firewall rule recommendations</li>
+          <li>Documented IOCs and maintained threat intelligence feeds for continuous detection coverage across client environments</li>
+          <li>Leveraged Python and PowerShell for basic log parsing and security task automation</li>
+        </ul>
+        <div class="exp-tools">
+          <span class="exp-tool">CrowdStrike</span>
+          <span class="exp-tool">IBM QRadar</span>
+          <span class="exp-tool">Palo Alto XSOAR</span>
+          <span class="exp-tool">Cortex XDR</span>
+          <span class="exp-tool">Azure AD</span>
+          <span class="exp-tool">VirusTotal</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-date">Sep 2020 — Present</div>
+        <div class="exp-company">HackerOne / Google VRP</div>
+        <div class="exp-type">Freelance</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Bug Bounty Hunter</div>
+        <ul class="exp-bullets">
+          <li>Reported 3 vulnerabilities on Google Bug Hunter platform; received 4 recognition awards for responsible disclosure</li>
+          <li>Awarded $200 bounty by Exness on HackerOne for disclosing a critical vulnerability in their mobile application</li>
+          <li>Valid reports on Azbuka Vkusa and Glassdoor programs; ranked #54 on Azbuka Vkusa — HackerOne reputation score: 26</li>
+        </ul>
+        <div class="exp-tools">
+          <span class="exp-tool">Burp Suite</span>
+          <span class="exp-tool">HackerOne</span>
+          <span class="exp-tool">Google VRP</span>
+          <span class="exp-tool">OWASP Top 10</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-date">2023</div>
+        <div class="exp-company">Change2TestAutomation</div>
+        <div class="exp-type">Internship</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Web Penetration Testing Intern</div>
+        <ul class="exp-bullets">
+          <li>Conducted web application penetration testing identifying OWASP Top 10 vulnerabilities</li>
+          <li>Produced detailed remediation reports for development teams</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="exp-item fade-in">
+      <div class="exp-meta">
+        <div class="exp-date">2023</div>
+        <div class="exp-company">TG Cyber Labs</div>
+        <div class="exp-type">Internship</div>
+      </div>
+      <div class="exp-content">
+        <div class="exp-role">Cyber Security Intern</div>
+        <ul class="exp-bullets">
+          <li>Performed vulnerability assessments and threat analysis on client systems</li>
+          <li>Developed and implemented security hardening recommendations alongside senior analysts</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- RESEARCH & PROJECTS -->
+<section class="section" id="projects" style="background:var(--paper2);max-width:100%;padding:6rem 0">
+  <div style="max-width:1200px;margin:0 auto;padding:0 4rem">
+    <div class="section-label">Research & Projects</div>
+    <h2 class="section-title">Published Work &amp; <em>Projects</em></h2>
+  </div>
+  <div class="projects-grid fade-in" style="max-width:1200px;margin:0 auto;padding:0 4rem">
+    <div class="project-card">
+      <div class="project-type">IEEE Publication · Cybersecurity</div>
+      <div class="project-title">Distributed Honeypot Based on Blockchain</div>
+      <div class="project-badges"><span class="project-badge">IEEE</span><span class="project-badge">Blockchain</span><span class="project-badge">Honeypot</span></div>
+      <div class="project-desc">Designed and implemented a blockchain-based distributed honeypot to detect and log malicious activity with tamper-proof transparency. Improved advanced threat detection using distributed ledger technology for secure, real-time monitoring of threat actors.</div>
+      <a href="https://ieeexplore.ieee.org/abstract/document/10544053" class="project-link" target="_blank">View on IEEE Xplore →</a>
+    </div>
+    <div class="project-card">
+      <div class="project-type">IEEE Publication · Cloud Security</div>
+      <div class="project-title">Screen Recording & Sharing over Cloud Platform for Remote Teams</div>
+      <div class="project-badges"><span class="project-badge">IEEE</span><span class="project-badge">Cloud</span><span class="project-badge">Collaboration</span></div>
+      <div class="project-desc">Designed a cloud-based screen recording and sharing platform for remote and cross-functional teams. Demonstrates expertise in cloud infrastructure, real-time data streaming, and secure media handling — directly applicable to enterprise security monitoring.</div>
+      <a href="https://ieeexplore.ieee.org/abstract/document/10369912" class="project-link" target="_blank">View on IEEE Xplore →</a>
+    </div>
+    <div class="project-card">
+      <div class="project-type">Web Development</div>
+      <div class="project-title">New Moon & Shine Clinic</div>
+      <div class="project-badges"><span class="project-badge">Full-Stack</span><span class="project-badge">SEO</span><span class="project-badge">Responsive</span></div>
+      <div class="project-desc">Built a fully responsive, SEO-optimized website for a dermatology and wellness clinic. Demonstrates full-stack development skills and understanding of web application architecture and attack surfaces.</div>
+      <a href="https://newmoonandshineclinic.com" class="project-link" target="_blank">Visit Website →</a>
+    </div>
+    <div class="project-card">
+      <div class="project-type">Web Development</div>
+      <div class="project-title">Loyalty Interiors</div>
+      <div class="project-badges"><span class="project-badge">Full-Stack</span><span class="project-badge">UI/UX</span><span class="project-badge">Mobile-first</span></div>
+      <div class="project-desc">Designed and deployed a dynamic, mobile-first portfolio website for an interior design firm. Highlights ability to identify and secure real-world web application vulnerabilities from a developer's perspective.</div>
+      <a href="https://loyaltyinteriors.com" class="project-link" target="_blank">Visit Website →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CERTIFICATIONS -->
+<div class="certs-bg" id="certs">
+  <div class="certs-inner">
+    <div class="section-label">Certifications</div>
+    <h2 class="section-title" style="margin-bottom:2rem">Credentials &amp; <em>Learning</em></h2>
+    <div class="certs-grid fade-in">
+      <div class="cert-card">
+        <div class="cert-icon">🏆</div>
+        <div class="cert-body">
+          <div class="cert-name">CompTIA Security+</div>
+          <div class="cert-issuer">CompTIA</div>
+          <span class="cert-badge cert-wip">Currently Pursuing</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🔒</div>
+        <div class="cert-body">
+          <div class="cert-name">Zero Trust & Best Practice Frameworks</div>
+          <div class="cert-issuer">Microsoft Learn</div>
+          <span class="cert-badge cert-done">Completed</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">📊</div>
+        <div class="cert-body">
+          <div class="cert-name">Security Monitoring & Governance</div>
+          <div class="cert-issuer">Microsoft Learn</div>
+          <span class="cert-badge cert-done">Completed</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">⚙</div>
+        <div class="cert-body">
+          <div class="cert-name">Introduction to Secure DevOps</div>
+          <div class="cert-issuer">Microsoft Learn</div>
+          <span class="cert-badge cert-done">Completed</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🎯</div>
+        <div class="cert-body">
+          <div class="cert-name">Ethical Hacking From Scratch</div>
+          <div class="cert-issuer">Udemy</div>
+          <span class="cert-badge cert-done">Completed</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🐛</div>
+        <div class="cert-body">
+          <div class="cert-name">Bug Bounty & Web Application Hacking</div>
+          <div class="cert-issuer">Udemy</div>
+          <span class="cert-badge cert-done">Completed</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">🌍</div>
+        <div class="cert-body">
+          <div class="cert-name">Business English Certificate — B1</div>
+          <div class="cert-issuer">Cambridge Assessment English · Overall Score: 148</div>
+          <span class="cert-badge cert-done">Jun 2022</span>
+        </div>
+      </div>
+      <div class="cert-card">
+        <div class="cert-icon">☕</div>
+        <div class="cert-body">
+          <div class="cert-name">Java Training Complete Course</div>
+          <div class="cert-issuer">Udemy</div>
+          <span class="cert-badge cert-done">Completed</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- BUG BOUNTY -->
+<section class="section" id="bounty">
+  <div class="section-label">Bug Bounty</div>
+  <h2 class="section-title">Vulnerability Research &amp; <em>Disclosure</em></h2>
+  <div class="bounty-layout">
+    <div class="bounty-left fade-in">
+      <div class="bounty-numbers">
+        <div class="bounty-row">
+          <div>
+            <div class="bounty-num"><span>$</span>200</div>
+            <div class="bounty-num-label">HackerOne Bounty</div>
+          </div>
+          <div>
+            <div class="bounty-num">4</div>
+            <div class="bounty-num-label">Google VRP Awards</div>
+          </div>
+        </div>
+        <div class="bounty-row">
+          <div>
+            <div class="bounty-num">26</div>
+            <div class="bounty-num-label">HackerOne Reputation</div>
+          </div>
+          <div>
+            <div class="bounty-num">3</div>
+            <div class="bounty-num-label">Programs Recognized</div>
+          </div>
+        </div>
+      </div>
+      <div class="bounty-programs">
+        <div class="bounty-program">
+          <div>
+            <div class="bp-name">Google Bug Hunter</div>
+            <div class="bp-sub">Google Vulnerability Reward Program</div>
+          </div>
+          <div>
+            <div class="bp-stat">4 Awards</div>
+            <div class="bp-valid">3 Reports</div>
+          </div>
+        </div>
+        <div class="bounty-program">
+          <div>
+            <div class="bp-name">Exness</div>
+            <div class="bp-sub">HackerOne · $200 Bounty</div>
+          </div>
+          <div>
+            <div class="bp-stat">22 Rep</div>
+            <div class="bp-valid">Critical Vuln</div>
+          </div>
+        </div>
+        <div class="bounty-program">
+          <div>
+            <div class="bp-name">Azbuka Vkusa</div>
+            <div class="bp-sub">HackerOne</div>
+          </div>
+          <div>
+            <div class="bp-stat">#54 Rank</div>
+            <div class="bp-valid">1 Valid Report</div>
+          </div>
+        </div>
+        <div class="bounty-program">
+          <div>
+            <div class="bp-name">Glassdoor</div>
+            <div class="bp-sub">HackerOne</div>
+          </div>
+          <div>
+            <div class="bp-stat">Valid</div>
+            <div class="bp-valid">1 Valid Report</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bounty-right fade-in">
+      <p style="color:var(--ink3);font-size:0.9rem;line-height:1.9;margin-bottom:2rem">Bug bounty hunting has been a core part of my security journey since 2020. It has sharpened my investigative mindset, deepened my understanding of application vulnerabilities, and given me real-world proof of the skills I bring to every security engagement.</p>
+      <div class="bounty-platforms">
+        <div class="platform-block">
+          <div class="pb-name">Google VRP</div>
+          <div class="pb-title">Google Vulnerability Reward Program</div>
+          <div class="pb-desc">Reported 3 vulnerabilities to Google's security team. Received 4 recognition awards for responsible, coordinated disclosure. Details remain confidential per program policy.</div>
+        </div>
+        <div class="platform-block">
+          <div class="pb-name">HackerOne</div>
+          <div class="pb-title">Active since September 2020</div>
+          <div class="pb-desc">Recognized across 3 programs — Exness ($200 bounty), Azbuka Vkusa (#54 ranked), and Glassdoor. Total reputation score of 26 with 2 valid/closed reports.</div>
+        </div>
+      </div>
+      <div style="margin-top:2rem">
+        <a href="https://hackerone.com/ssdhussain" class="btn-primary" target="_blank" style="display:inline-block">View HackerOne Profile →</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<div class="contact-bg" id="contact">
+  <div class="contact-label">Contact</div>
+  <h2 class="contact-title">Let's Work <em style="font-style:italic;color:rgba(200,145,58,0.9)">Together</em></h2>
+  <p class="contact-sub">Open to SOC Analyst, Threat Detection, Incident Response, Penetration Testing, and Threat Intelligence opportunities.</p>
+  <div class="contact-links">
+    <a href="mailto:ssdhussain2003@gmail.com" class="contact-link">✉ ssdhussain2003@gmail.com</a>
+    <a href="tel:+917305920827" class="contact-link">📞 +91 7305920827</a>
+    <a href="https://www.linkedin.com/in/sheik-dhanveer-hussain-s-104b951aa/" target="_blank" class="contact-link">💼 LinkedIn</a>
+    <a href="https://hackerone.com/ssdhussain" target="_blank" class="contact-link">🐛 HackerOne</a>
+  </div>
+  <div class="contact-info">
+    <div>
+      <div class="ci-label">Location</div>
+      <div class="ci-val">Chennai, Tamil Nadu, India</div>
+    </div>
+    <div>
+      <div class="ci-label">Current Role</div>
+      <div class="ci-val">SOC L1 Analyst · TCS</div>
+    </div>
+    <div>
+      <div class="ci-label">Availability</div>
+      <div class="ci-val">Open to Opportunities</div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <p>© 2025 Sheik Dhanveer Hussain S · Cyber Security Analyst · Chennai, India</p>
+  <p>Built for professional use · All rights reserved</p>
+</footer>
+
+<script>
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('visible'); obs.unobserve(e.target); } });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
